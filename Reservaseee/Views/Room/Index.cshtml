@@ -1,0 +1,43 @@
+@model RoomModel
+
+<div class="h1 text-primary text-center w-100">Reservation in <span class="text-primary fw-bold">@Model.Name</span></div>
+
+<div class="d-flex flex-row gap-5 p-1 align-items-start">
+    <div class="bg-light d-flex flex-column p-4 gap-5" style="min-width: 325px">
+        <div class="d-flex flex-column">
+            <div class="h3 text-primary fw-bold mb-3">
+                Create new reservation
+            </div>
+
+            <div>
+                @using (Html.BeginForm("Create", "Room", FormMethod.Post))
+                {
+                    <div class="input-group d-flex flex-column gap-2 w-100">
+                        <input name="buildingId" id="buildingId" type="hidden" value="@ViewBag.buildingId"/>
+                        <input name="roomId" id="roomId" type="hidden" value="@Model.Id"/>
+
+                        <label for="description" class="form-label text-secondary fw-bolder">Popis</label>
+                        <input class="w-100 border-0 bg-transparent  border-bottom border-primary" name="description" id="description" type="text" placeholder="Kdo"/>
+
+                        <label for="start" class="form-label text-secondary fw-bolder">Od</label>
+                        <input class="w-100 border-0 bg-transparent  border-bottom border-primary" name="start" id="start" type="datetime-local"/>
+
+                        <label for="end" class="form-label text-secondary fw-bolder">Do</label>
+                        <input class="w-100 border-0 bg-transparent  border-bottom border-primary" name="end" id="end" type="datetime-local"/>
+
+                        <input class="btn btn-primary rounded-2 shadow-sm" type="submit"/>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    
+    <div class="w-100 d-flex overflow-scroll bg-light position-absolute" style="height: 400px">
+        @foreach (var twm in Model.Tabular())
+        {
+            <div style="height: @(twm.End - twm.Start).TotalMinutes px; margin-bottom: @(twm.NextStart - twm.End).TotalMinutes px" class="w-100">
+
+            </div>
+        }
+    </div>
+</div>

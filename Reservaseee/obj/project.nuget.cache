@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ga0KvxPCHRlSfRZZN+09ueUmpMN/bNnqru4ze8VYjf+PK0Tl81Yojhffz3ebFHkWrxM/jrV55MSwcV3TsGApEA==",
+  "success": true,
+  "projectFilePath": "/home/pavel/dev/Reservaseee/Reservaseee/Reservaseee.csproj",
+  "expectedPackageFiles": [
+    "/home/pavel/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.13/microsoft.aspnetcore.app.ref.6.0.13.nupkg.sha512"
+  ],
+  "logs": []
+}

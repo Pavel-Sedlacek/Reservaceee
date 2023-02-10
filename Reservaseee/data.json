@@ -1,0 +1,52 @@
+[
+  {
+    "Id": "20d223f5-e145-4239-b75b-f7b5bbd4a252",
+    "Name": "dwa",
+    "Description": null,
+    "Rooms": [
+      {
+        "Id": "d0bca4b3-59d2-4e3d-be33-10279334bcce",
+        "TimeTable": {
+          "TimeModels": [
+            {
+              "Start": "2023-04-01T00:00:00",
+              "End": "2023-04-05T00:00:00",
+              "Description": "Lmao"
+            },
+            {
+              "Start": "2022-04-01T00:00:00",
+              "End": "2022-04-05T00:00:00",
+              "Description": "Bruh"
+            },
+            {
+              "Start": "0001-01-01T00:00:00",
+              "End": "0001-01-01T00:00:00",
+              "Description": null
+            }
+          ]
+        },
+        "Name": "f"
+      },
+      {
+        "Id": "58e14902-30a6-4ed4-894e-114d92e7ed8c",
+        "TimeTable": {
+          "TimeModels": []
+        },
+        "Name": "fe"
+      },
+      {
+        "Id": "f277f275-64ae-4613-ab80-9153c929db23",
+        "TimeTable": {
+          "TimeModels": []
+        },
+        "Name": "gr"
+      }
+    ]
+  },
+  {
+    "Id": "d4e3af69-418f-4763-ab2e-09da55a697f7",
+    "Name": "dwa",
+    "Description": "dwa",
+    "Rooms": []
+  }
+]

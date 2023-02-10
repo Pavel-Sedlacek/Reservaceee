@@ -1,0 +1,66 @@
+@model List<BuildingModel>
+
+<div class="h1 text-primary text-center w-100">Buildings</div>
+
+<div class="d-flex flex-row gap-5 p-1 align-items-start">
+
+    <div class="bg-light d-flex flex-column p-4 gap-5" style="min-width: 325px">
+
+        <div class="d-flex flex-column">
+            <div class="h3 text-primary fw-bold mb-3">
+                Create new building
+            </div>
+
+            <div>
+                @using (Html.BeginForm("Create", "Buildings", FormMethod.Post))
+                {
+                    <div class="input-group d-flex flex-column gap-2 w-100">
+                        <label for="name" class="form-label text-secondary fw-bolder">Jméno</label>
+                        <input class="w-100 border-0 bg-transparent  border-bottom border-primary" name="name" id="name" type="text" placeholder="Nazev budky" required="required"/>
+                        <label for="description" class="form-label text-secondary fw-bolder">Popis</label>
+                        <textarea class="w-100 border-0 bg-transparent  border-bottom border-primary" name="description" id="description" placeholder="Popis" required="required"></textarea>
+                        <input class="btn btn-primary rounded-2 shadow-sm" type="submit"/>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="d-flex flex-column">
+            <div class="h3 text-primary fw-bold mb-3">
+                Delete building
+            </div>
+
+            <div>
+                @using (Html.BeginForm("Delete", "Buildings", FormMethod.Post))
+                {
+                    <div class="input-group d-flex flex-column gap-2 w-100">
+                        <label for="id" class="form-label text-secondary fw-bolder">Building</label>
+                        <select name="id" id="id" required="required" class="w-100 border-0 bg-transparent border-bottom border-primary">
+                            @foreach (var bm in Model)
+                            {
+                                <option value="@bm.Id">@bm.Name</option>
+                            }
+                        </select>
+                        <input class="btn btn-primary rounded-2 shadow-sm" type="submit"/>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>
+
+    <div class="d-flex flex-row flex-wrap align-items-center gap-3">
+        @foreach (var building in Model)
+        {
+            <div class="d-flex flex-column shadow border border-primary rounded-2 p-4">
+                <span class="h2 text-primary mb-2">@building.Name</span>
+                <span class="small text-muted mb-2">@building.Id</span>
+                <span class="text-secondary d-flex flex-row">
+                    <span>Popis: </span><span class="text-secondary">@building.Description</span>
+                </span>
+                <span class="text-secondary">Místností: <span class="text-primary fw-bold">@building.Rooms.Count</span></span>
+                <a asp-action="Index" asp-controller="Rooms" class="btn btn-secondary py-2 shadow mt-3" asp-route-id="@building.Id">Detail</a>
+            </div>
+        }
+    </div>
+</div>
